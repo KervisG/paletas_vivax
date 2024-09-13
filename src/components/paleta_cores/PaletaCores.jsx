@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import cor from '../cores/Cor';  
-import mockupImage1 from '../../assets/sala.jpg';  
-import mockupImage2 from '../../assets/cuarto.jpg';
-import mockupImage3 from '../../assets/salaa2.jpg';
-import mockupImage4 from '../../assets/afuera_de_casa.jpg';
+import mockupImage1 from '../../assets/sala.png';  
+import mockupImage2 from '../../assets/cuarto.png';
+import mockupImage3 from '../../assets/salaa2.png';
+import mockupImage4 from '../../assets/afuera_de_casa.png';
 
 function PaletaCores() {
 
