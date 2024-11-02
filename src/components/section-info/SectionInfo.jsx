@@ -35,11 +35,14 @@ const ContactSection = () => {
             backgroundImage: `url(${backgroundImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            padding: '6rem 2rem',
+            padding: '4rem 1rem', // Ajuste inicial de padding
             color: '#fff',
             position: 'relative',
             textAlign: 'center',
           }}
+          className={css({
+            padding: { base: '4rem 1rem', md: '6rem 2rem', lg: '8rem 4rem' },
+          })}
         >
           <div
             style={{
@@ -52,11 +55,11 @@ const ContactSection = () => {
               zIndex: 1,
             }}
           ></div>
-          <div className={css({ position: 'relative', zIndex: 10, maxWidth: '600px', margin: 'auto' })}>
-            <h2 className={css({ fontSize: '2.5rem', fontWeight: '600', marginBottom: '1rem' })}>
+          <div className={css({ position: 'relative', zIndex: 10, maxWidth: { base: '90%', md: '600px' }, margin: 'auto' })}>
+            <h2 className={css({ fontSize: { base: '1.75rem', md: '2.5rem', lg: '3rem' }, fontWeight: '600', marginBottom: '1rem' })}>
               Sua vida colorida por mais tempo!
             </h2>
-            <p className={css({ fontSize: '1.125rem', marginBottom: '2rem' })}>
+            <p className={css({ fontSize: { base: '1rem', md: '1.125rem' }, marginBottom: '2rem' })}>
               Atuando desde pequenas reformas até grandes obras, somos especialistas do estrutural ao acabamento.
             </p>
             <a
@@ -66,7 +69,7 @@ const ContactSection = () => {
               className={css({
                 backgroundColor: '#FFD700',
                 color: '#452F71',
-                padding: '0.75rem 1.5rem',
+                padding: { base: '0.5rem 1rem', md: '0.75rem 1.5rem' },
                 borderRadius: '50px',
                 fontWeight: '500',
                 textDecoration: 'none',
@@ -93,10 +96,10 @@ const ContactSection = () => {
 
       {/* Sección de Información con Estilo de Tarjeta */}
       <FadeInSection>
-        <div className={css({ padding: '4rem 2rem', backgroundColor: '#5B3A8F', textAlign: 'center' })}>
+        <div className={css({ padding: { base: '2rem 1rem', md: '4rem 2rem' }, backgroundColor: '#5B3A8F', textAlign: 'center' })}>
           <div className={css({ maxWidth: '800px', margin: 'auto', backgroundColor: '#FFFFFF', padding: '2rem', borderRadius: '12px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', display: 'grid', gap: '1.5rem' })}>
             <div className={css({ color: '#452F71' })}>
-              <h3 className={css({ fontSize: '1.75rem', fontWeight: '600' })}>
+              <h3 className={css({ fontSize: { base: '1.5rem', md: '1.75rem' }, fontWeight: '600' })}>
                 Como funciona nossa operação de trabalho?
               </h3>
               <p className={css({ fontSize: '1rem', color: '#333', opacity: 0.85, lineHeight: '1.75' })}>
@@ -115,7 +118,7 @@ const ContactSection = () => {
 
       {/* Sección de "Quem Somos" con Tarjeta y Imagen */}
       <FadeInSection>
-        <div className={css({ padding: '10rem 0', backgroundColor: '#FFFFFF', textAlign: 'center', marginTop: '-30rem' })}>
+        <div className={css({ padding: { base: '2rem 1rem', md: '3rem 2rem' }, backgroundColor: '#FFFFFF', textAlign: 'center', marginTop: '-2rem' })}>
           <div className={css({ display: 'flex', flexDirection: ['column', 'row'], gap: '1rem', maxWidth: '950px', margin: 'auto', boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)', borderRadius: '12px', overflow: 'hidden' })}>
             <div className={css({ flex: '1' })}>
               <img
@@ -125,7 +128,7 @@ const ContactSection = () => {
               />
             </div>
             <div className={css({ flex: '1', textAlign: 'left', padding: '2rem', color: '#452F71' })}>
-              <h3 className={css({ fontSize: '1.75rem', fontWeight: '600', color: '#FFD700', marginBottom: '1rem' })}>
+              <h3 className={css({ fontSize: { base: '1.5rem', md: '1.75rem' }, fontWeight: '600', color: '#FFD700', marginBottom: '1rem' })}>
                 QUEM SOMOS
               </h3>
               <p className={css({ fontSize: '1rem', lineHeight: '1.75', marginBottom: '1rem', opacity: 0.85 })}>
@@ -142,8 +145,8 @@ const ContactSection = () => {
 
       {/* Sección Final con Botón y Fondo Degradado */}
       <FadeInSection>
-        <div className={css({ textAlign: 'center', padding: '4rem 2rem', backgroundImage: 'linear-gradient(135deg, #5B3A8F 0%, #452F71 100%)', color: '#FFFFFF' })}>
-          <h3 className={css({ fontSize: '1.75rem', fontWeight: '600', marginBottom: '1rem' })}>
+        <div className={css({ textAlign: 'center', padding: { base: '3rem 1rem', md: '4rem 2rem' }, backgroundImage: 'linear-gradient(135deg, #5B3A8F 0%, #452F71 100%)', color: '#FFFFFF' })}>
+          <h3 className={css({ fontSize: { base: '1.5rem', md: '1.75rem' }, fontWeight: '600', marginBottom: '1rem' })}>
             Nossos parceiros
           </h3>
           <p className={css({ fontSize: '1rem', opacity: 0.85, marginBottom: '2rem' })}>
@@ -157,7 +160,7 @@ const ContactSection = () => {
             className={css({
               backgroundColor: '#FFD700',
               color: '#452F71',
-              padding: '0.75rem 1.5rem',
+              padding: { base: '0.5rem 1rem', md: '0.75rem 1.5rem' },
               borderRadius: '50px',
               fontWeight: '500',
               textDecoration: 'none',
