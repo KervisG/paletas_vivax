@@ -80,13 +80,21 @@ const ContactSection = () => {
               <i className="fab fa-whatsapp" style={{ fontSize: '1.25rem' }}></i> Peça já um orçamento
             </a>
           </div>
+          <div className={css({ textAlign: 'center', padding: '1rem 0', zIndex: 10, position: 'relative' })}>
+            <i className="fas fa-chevron-down" style={{ fontSize: '24px', color: '#FFD700', animation: 'bounce 2s infinite' }}></i>
+          </div>
         </div>
       </FadeInSection>
 
-      {/* Sección de Información */}
+      {/* Divisor Ondulado */}
+      <svg viewBox="0 0 1440 320" className={css({ display: 'block', marginTop: '-2px' })}>
+        <path fill="#5B3A8F" fillOpacity="1" d="M0,160L80,144C160,128,320,96,480,96C640,96,800,128,960,133.3C1120,139,1280,117,1360,106.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+      </svg>
+
+      {/* Sección de Información con Estilo de Tarjeta */}
       <FadeInSection>
-        <div className={css({ padding: '4rem 2rem', backgroundColor: '#fff', textAlign: 'center' })}>
-          <div className={css({ maxWidth: '800px', margin: 'auto', display: 'grid', gap: '1.5rem' })}>
+        <div className={css({ padding: '4rem 2rem', backgroundColor: '#5B3A8F', textAlign: 'center' })}>
+          <div className={css({ maxWidth: '800px', margin: 'auto', backgroundColor: '#FFFFFF', padding: '2rem', borderRadius: '12px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', display: 'grid', gap: '1.5rem' })}>
             <div className={css({ color: '#452F71' })}>
               <h3 className={css({ fontSize: '1.75rem', fontWeight: '600' })}>
                 Como funciona nossa operação de trabalho?
@@ -100,18 +108,23 @@ const ContactSection = () => {
         </div>
       </FadeInSection>
 
-      {/* Sección de "Quiénes Somos" */}
+      {/* Divisor Ondulado Invertido */}
+      <svg viewBox="0 0 1440 320" className={css({ display: 'block', marginBottom: '-2px' })}>
+        <path fill="#FFFFFF" fillOpacity="1" d="M0,160L80,144C160,128,320,96,480,96C640,96,800,128,960,133.3C1120,139,1280,117,1360,106.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+      </svg>
+
+      {/* Sección de "Quem Somos" con Tarjeta y Imagen */}
       <FadeInSection>
-        <div className={css({ backgroundColor: '#5B3A8F', padding: '4rem 2rem', color: '#fff' })}>
-          <div className={css({ display: 'flex', flexDirection: ['column', 'row'], gap: '2rem', maxWidth: '900px', margin: 'auto' })}>
+        <div className={css({ padding: '10rem 0', backgroundColor: '#FFFFFF', textAlign: 'center', marginTop: '-30rem' })}>
+          <div className={css({ display: 'flex', flexDirection: ['column', 'row'], gap: '1rem', maxWidth: '950px', margin: 'auto', boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)', borderRadius: '12px', overflow: 'hidden' })}>
             <div className={css({ flex: '1' })}>
               <img
                 src={ImgQuemsomos}
                 alt="Quem Somos"
-                style={{ width: '100%', borderRadius: '12px', boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)' }}
+                style={{ width: '100%', borderRadius: '12px 0 0 12px' }}
               />
             </div>
-            <div className={css({ flex: '1', textAlign: ['center', 'left'] })}>
+            <div className={css({ flex: '1', textAlign: 'left', padding: '2rem', color: '#452F71' })}>
               <h3 className={css({ fontSize: '1.75rem', fontWeight: '600', color: '#FFD700', marginBottom: '1rem' })}>
                 QUEM SOMOS
               </h3>
@@ -127,13 +140,13 @@ const ContactSection = () => {
         </div>
       </FadeInSection>
 
-      {/* Sección Final con Botón */}
+      {/* Sección Final con Botón y Fondo Degradado */}
       <FadeInSection>
-        <div className={css({ textAlign: 'center', padding: '4rem 2rem', backgroundColor: '#FFFFFF' })}>
-          <h3 className={css({ fontSize: '1.75rem', fontWeight: '600', color: '#452F71', marginBottom: '1rem' })}>
+        <div className={css({ textAlign: 'center', padding: '4rem 2rem', backgroundImage: 'linear-gradient(135deg, #5B3A8F 0%, #452F71 100%)', color: '#FFFFFF' })}>
+          <h3 className={css({ fontSize: '1.75rem', fontWeight: '600', marginBottom: '1rem' })}>
             Nossos parceiros
           </h3>
-          <p className={css({ fontSize: '1rem', color: '#333', opacity: 0.85, marginBottom: '2rem' })}>
+          <p className={css({ fontSize: '1rem', opacity: 0.85, marginBottom: '2rem' })}>
             Graças a estas parcerias estratégicas, garantimos os melhores produtos, materiais e resultados para sua
             necessidade.
           </p>
@@ -142,8 +155,8 @@ const ContactSection = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={css({
-              backgroundColor: '#5B3A8F',
-              color: '#FFFFFF',
+              backgroundColor: '#FFD700',
+              color: '#452F71',
               padding: '0.75rem 1.5rem',
               borderRadius: '50px',
               fontWeight: '500',
@@ -152,7 +165,7 @@ const ContactSection = () => {
               alignItems: 'center',
               gap: '0.5rem',
               boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-              '&:hover': { backgroundColor: '#4a2c70' },
+              '&:hover': { backgroundColor: '#e0c12e' },
             })}
           >
             <i className="fab fa-whatsapp" style={{ fontSize: '1.25rem' }}></i> Também quero ser um parceiro
