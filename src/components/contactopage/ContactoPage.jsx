@@ -41,6 +41,8 @@ const ContactPage = () => {
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'column',
+            textAlign: 'center',
+            padding: { base: '1rem', md: '0' },
           })}
         >
           <div
@@ -49,9 +51,9 @@ const ContactPage = () => {
               padding: '1.5rem 2rem',
               borderRadius: '12px',
               boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
-              textAlign: 'center',
               maxWidth: '600px',
               marginBottom: '2rem',
+              width: '90%', // Ajuste de ancho para móviles
             })}
           >
             <p className={css({ color: '#333', fontWeight: '600', marginBottom: '0.5rem' })}>
@@ -68,14 +70,15 @@ const ContactPage = () => {
       <div
         className={css({
           display: 'flex',
+          flexDirection: { base: 'column', md: 'row' }, // Columna en móviles
           justifyContent: 'center',
           gap: '2rem',
-          padding: '4rem 2rem',
+          padding: '4rem 1rem',
           backgroundColor: '#D8A131',
         })}
       >
         {/* Contact Information */}
-        <div className={css({ color: '#452F71', maxWidth: '400px' })}>
+        <div className={css({ color: '#452F71', maxWidth: '400px', textAlign: { base: 'center', md: 'left' } })}>
           <h2 className={css({ fontSize: '1.5rem', fontWeight: '600', marginBottom: '1rem' })}>
             Fale Conosco
           </h2>
@@ -123,7 +126,15 @@ const ContactPage = () => {
         </div>
 
         {/* Contact Form */}
-        <div className={css({ flex: '1', backgroundColor: '#452F71', padding: '2rem', borderRadius: '12px', maxWidth: '400px' })}>
+        <div className={css({ 
+          flex: '1', 
+          backgroundColor: '#452F71', 
+          padding: '2rem', 
+          borderRadius: '12px', 
+          maxWidth: '400px',
+          width: '100%', // Ajuste de ancho completo en móviles
+          margin: { base: '0 auto', md: '0' }, // Centrar en móviles
+        })}>
           <form className={css({ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: '#FFFFFF' })}>
             <InputField label="Nome" placeholder="Seu nome" />
             <InputField label="Seu melhor e-mail" placeholder="E-mail" type="email" />
@@ -203,9 +214,17 @@ const Checkbox = ({ label }) => (
   </label>
 );
 
-// Componentes reutilizables para el formulario y elementos de contacto
+// Componente reutilizable para la información de contacto
 const ContactItem = ({ iconClass: Icon, title, text, link }) => (
-  <a href={link} target="_blank" rel="noopener noreferrer" className={css({ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem', color: '#452F71' })}>
+  <a href={link} target="_blank" rel="noopener noreferrer" className={css({ 
+    display: 'flex', 
+    alignItems: 'center', 
+    gap: '1rem', 
+    marginBottom: '1rem', 
+    color: '#452F71',
+    fontSize: { base: '14px', md: '16px' }, // Tamaño de texto para diferentes pantallas
+    textAlign: { base: 'center', md: 'left' }, // Centrar en móviles
+  })}>
     <div className={css({
       backgroundColor: '#452F71',
       borderRadius: '8px',
@@ -214,9 +233,10 @@ const ContactItem = ({ iconClass: Icon, title, text, link }) => (
       alignItems: 'center',
       justifyContent: 'center',
       width: '40px',
-      height: '40px'
+      height: '40px',
+      fontSize: { base: '1.5rem', md: '1.25rem' } // Ícono más grande en móviles
     })}>
-      <Icon style={{ color: '#D8A131', fontSize: '1.25rem' }} />
+      <Icon style={{ color: '#D8A131' }} />
     </div>
     <div>
       <span className={css({ fontWeight: '600' })}>{title}</span>
