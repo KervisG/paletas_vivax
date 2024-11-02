@@ -6,27 +6,25 @@ import mockupImage3 from '../../assets/salaa2.png';
 import mockupImage4 from '../../assets/afuera_de_casa.png';
 
 function PaletaCores() {
-
   const [selectedColor, setSelectedColor] = useState({ color: '', nombre: '', id: null, vivax: '' });
   const imageRef = useRef(null);
 
   const handleColorChange = (color, nombre, id, vivax) => {
     setSelectedColor({ color, nombre, id, vivax });
-
     setTimeout(() => {
       imageRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 100); 
   };
 
   return (
-    <div style={{ padding: "15px", maxWidth: "1500px", margin: "0 auto" }}>
+    <div style={{ padding: "30px", maxWidth: "1800px", margin: "0 auto" }}>
       <h1
         style={{
           textAlign: "center",
           color: "#333",
-          marginBottom: "40px",
+          marginBottom: "8px",
           fontFamily: '"Poppins", sans-serif',
-          fontSize: "26px",
+          fontSize: "28px",
           fontWeight: "700",
           letterSpacing: "1px",
           textTransform: "uppercase",
@@ -38,8 +36,10 @@ function PaletaCores() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(30px, 1fr))",
-          gap: "31px",
+          gridTemplateColumns: "repeat(auto-fill, minmax(60px, 1fr))",
+          gap: "40px",  // Más espacio entre círculos
+          justifyContent: "center",
+          padding: "20px",
         }}
       >
         {cor.map((pintura) => (
@@ -50,6 +50,7 @@ function PaletaCores() {
               flexDirection: "column",
               alignItems: "center",
               cursor: "pointer",
+              transition: "transform 0.2s ease-in-out",
             }}
             onClick={() =>
               handleColorChange(
@@ -59,28 +60,25 @@ function PaletaCores() {
                 pintura.vivax
               )
             }
+            onMouseDown={() => {
+              document.getElementById(`circle-${pintura.id}`).style.transform = "scale(1.1)";
+            }}
+            onMouseUp={() => {
+              document.getElementById(`circle-${pintura.id}`).style.transform = "scale(1)";
+            }}
           >
             <div
+              id={`circle-${pintura.id}`}
               style={{
                 backgroundColor: pintura.color,
-                width: "40px",
-                height: "40px",
+                width: "55px",
+                height: "55px",
                 borderRadius: "100%",
                 marginBottom: "0px",
-                boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+                transition: "all 0.3s cubic-bezier(.68,-0.55,.27,1.55)",  // Animación de rebote
               }}
             ></div>
-            <span
-              style={{
-                color: pintura.color,
-                textAlign: "center",
-                fontFamily: '"Montserrat", sans-serif',
-                fontSize: "16px",
-                fontWeight: "bold",
-                letterSpacing: "0.5px",
-                textShadow: "1px 1px 2px rgba(0, 0, 0, 0.2)",
-              }}
-            ></span>
           </div>
         ))}
       </div>
@@ -89,15 +87,16 @@ function PaletaCores() {
         <div
           ref={imageRef}
           style={{
-            marginTop: "20px",
+            marginTop: "40px",
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)", 
-            gap: "5px",
+            gap: "20px",
             justifyContent: "center",
             alignItems: "center",
-            // Media query para pantallas pequeñas
+            maxWidth: "1400px",
+            margin: "0 auto",
             ...(window.innerWidth < 768 && {
-              gridTemplateColumns: "repeat(1, 1fr)", // Una columna por fila en móviles
+              gridTemplateColumns: "repeat(1, 1fr)",
             }),
           }}
         >
@@ -107,8 +106,8 @@ function PaletaCores() {
                 key={index}
                 style={{
                   width: "100%",
-                  maxWidth: "300px", // Tamaño más pequeño para móviles
-                  height: "210px",
+                  maxWidth: "350px",
+                  height: "250px",
                   backgroundImage: `url(${image})`,
                   backgroundColor: selectedColor.color,
                   backgroundBlendMode: "multiply",
@@ -133,7 +132,7 @@ function PaletaCores() {
                     fontFamily: '"Poppins", sans-serif',
                     fontSize: "18px",
                     ...(window.innerWidth < 768 && {
-                      fontSize: "14px", // Ajustes en móviles
+                      fontSize: "14px",
                       padding: "5px 10px",
                     }),
                   }}
