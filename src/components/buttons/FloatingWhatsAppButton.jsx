@@ -10,14 +10,14 @@ const FloatingWhatsAppButton = () => {
       rel="noopener noreferrer"
       className={css({
         position: "fixed",
-        bottom: "20px", 
-        right: "20px", 
+        bottom: "20px",
+        right: "20px",
         backgroundColor: "#25D366",
         color: "white",
         borderRadius: "50%",
-        padding: "15px",
-        fontSize: "24px",
-        zIndex: "1000", 
+        padding: { base: "18px", md: "20px", lg: "40px" },  // Aumenta el padding en pantallas grandes (lg)
+        fontSize: { base: "55px", md: "44px", lg: "35px" },  // Aumenta el tamaño del ícono en pantallas grandes (lg)
+        zIndex: "1000",
         boxShadow: "0 2px 10px rgba(0, 0, 0, 0.2)",
         transition: "transform 0.3s ease-in-out",
         '&:hover': {

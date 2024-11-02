@@ -16,7 +16,7 @@ const Header = () => {
   const linkStyles = (button) =>
     css({
       display: "flex",
-      flexDirection: { base: "column", md: "row" }, // Íconos sobre el texto en pantallas pequeñas
+      flexDirection: { base: "column", md: "row" },
       justifyContent: "center",
       alignItems: "center",
       padding: "8px 10px",
@@ -43,7 +43,7 @@ const Header = () => {
     });
 
   const iconStyles = css({
-    fontSize: { base: "24px", md: "16px" },
+    fontSize: { base: isMenuOpen ? "50px" : "54px", md: "56px" }, // Íconos más grandes en móviles cuando el menú está abierto
     marginBottom: { base: "5px", md: "0" },
   });
 
@@ -72,7 +72,7 @@ const Header = () => {
           display: { base: "block", md: "none" },
           background: "none",
           border: "none",
-          fontSize: "24px",
+          fontSize: "30px",
           cursor: "pointer",
           color: "#8742a0",
         })}
